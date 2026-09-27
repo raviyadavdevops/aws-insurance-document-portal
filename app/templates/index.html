@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insurance Document Upload Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Upload Your Insurance Document</h1>
+    <p>Select a document (identity proof, claim form, or supporting evidence) and upload it.</p>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <button type="submit">Upload</button>
+    </form>
+
+    {% if status == "success" %}
+      <div class="status status-success">{{ message }}</div>
+    {% elif status == "error" %}
+      <div class="status status-error">{{ message }}</div>
+    {% endif %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Copy this file to terraform.tfvars and fill in real values.
+# terraform.tfvars is git-ignored — never commit real secrets.
+
+aws_region   = "us-east-1"
+project_name = "insurance-doc-portal"
+
+# Exactly two Availability Zones (Constitution Principle I/V)
+availability_zones = ["us-east-1a", "us-east-1b"]
+
+# RDS master credentials — no defaults are provided in variables.tf on purpose.
+db_username = "portal_admin"
+db_password = "REPLACE_ME_WITH_A_STRONG_PASSWORD"
+db_name     = "insurance_documents"

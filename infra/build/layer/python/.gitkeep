@@ -1,0 +1,5 @@
+# Tracked placeholder so `infra/build/layer/python/` always exists on a clean checkout.
+# `terraform plan` reads data.archive_file.lambda_layer's source_dir before any
+# provisioner side effect runs, so this directory must exist ahead of time — the
+# null_resource.lambda_layer_deps provisioner then populates it with the actual
+# psycopg2-binary wheel contents on `terraform apply`.
